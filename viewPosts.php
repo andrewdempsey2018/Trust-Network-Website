@@ -1,25 +1,45 @@
 <html><head><title>Get data</title></head>
 <body>
 <?php
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$db = "posts";
+
 #connect to MySQL
-$conn = @mysql_connect("localhost", "mike", "bingo") or die("Err:Conn");
+$dbconnect=mysqli_connect($hostname, $username, $password, $db) or die("Problem connecting to database");
+
+if($dbconnect->connect_error)
+{
+    die("Database connection failed: " . $dbconnect->connect_error);
+}
+
 
 #select the specified database
-$rs = @mysql_select_db("my_database", $conn) or die("Err:DB");
+$query = mysqli_query($dbconnect, "SELECT * FROM user_posts") or die (mysqli_error($dbconnect));
 
-#create the query
-$sql = "select id, first_name from my_table";
+?>
 
-#execute the query
-$rs = mysql_query($sql, $conn);
+<table border="1" align="center">
+<tr>
+  <td>Post</td>
+  <td>Picture</td>
+</tr>
 
-#write the data
-while($row = mysql_fetch_array($rs))
+<?php
+
+while ($row = mysqli_fetch_array($query))
 {
-    echo("ID: " . $row["id"]);
-    echo("- first name: " . $row["first_name"] . "<br>");
+  echo
+   "<tr>
+    <td>{$row['text']}</td>
+    <td>{$row['images']}</td>
+   </tr>\n";
 }
 
 ?>
 
-</body></html>
+</table>
+</body>
+</html>
