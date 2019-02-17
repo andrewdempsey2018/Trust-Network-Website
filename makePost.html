@@ -40,10 +40,12 @@
 	{
 		usersPost = "Users message has now been encoded";
 
+		document.getElementById("postText").value = usersPost;
+
 		var imgData = context.getImageData(0, 0, 128, 128);
 
 		var i;
-        for (i = 0; i < imgData.data.length; i += 2)
+        for (i = 0; i < imgData.data.length; i += 3)
 		{
 			imgData.data[i] = 200;
 		}

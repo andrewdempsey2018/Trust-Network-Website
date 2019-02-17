@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
 
     if(!mysqli_query($dbconnect, $query))
 	{
-        die('An error occurred. Your post was not uploaded.');
+        die('*** ERROR ***. Your post was not uploaded.');
     }
 	else
 	{
