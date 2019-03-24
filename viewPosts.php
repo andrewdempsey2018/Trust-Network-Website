@@ -1,5 +1,6 @@
 <html><head><title>Get data</title></head>
 <body>
+<canvas id="canvas" width="128" height="128"></canvas>
 <?php
 
 $hostname = "localhost";
@@ -19,27 +20,23 @@ if($dbconnect->connect_error)
 #select the specified database
 $query = mysqli_query($dbconnect, "SELECT * FROM user_posts") or die (mysqli_error($dbconnect));
 
-?>
-
-<table border="1" align="center">
-<tr>
-  <td>Post</td>
-  <td>Picture</td>
-</tr>
-
-<?php
-
 while ($row = mysqli_fetch_array($query))
 {
-  echo
-   "<tr>
-    <td>{$row['text']}</td>
-    <td>{$row['images']}</td>
-   </tr>\n";
+
+$anotherVar = $row['text'];
+$someVar = $row['images'];
 }
 
 ?>
 
-</table>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var image = "<?php echo $someVar; ?>";
+
+document.getElementById('canvas').src = image;
+
+</script>
+
 </body>
 </html>
