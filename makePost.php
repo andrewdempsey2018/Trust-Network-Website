@@ -15,9 +15,8 @@ if ($dbconnect->connect_error)
 if(isset($_POST['submit'])) 
 {
     $postText=$_POST['postText'];
-    $alteredImageData=$_POST['alteredImageData'];
 
-    $query = "INSERT INTO user_posts (text, images) VALUES ('$postText', '$alteredImageData')";
+    $query = "INSERT INTO user_posts (text) VALUES ('$postText')";
 
     if(!mysqli_query($dbconnect, $query))
 	{

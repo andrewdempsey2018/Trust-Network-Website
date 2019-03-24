@@ -4,11 +4,6 @@
 
   <p>Trust Social Network - Make a post</p>
 
-  <img src="testImage.jpg" id="testImage" alt="A picture of a beach" height="128" width="128">
-  
-  <canvas id="canvas" width="128" height="128"></canvas>
-
-
   <form action="makePost.php" method="POST">
 
       Your post: <br>
@@ -17,7 +12,6 @@
 		 
 		<input type="submit" value="Submit" name="submit">
 
-        <input type="hidden" id="alteredImageData" name="alteredImageData" />
 
   </form>
 
@@ -25,33 +19,11 @@
 
   <script>
 
-    var canvas = document.getElementById("canvas");
-    var context = canvas.getContext("2d");
-    var image = document.getElementById("testImage");
-
     var usersPost = document.getElementById("postText").value;
-
-    window.onload = function()
-    {
-        context.drawImage(image, 0, 0);
-    }
 
     function encode()
 	{
 		usersPost = "Users message has now been encoded";
-
-		document.getElementById("postText").value = usersPost;
-
-		var imgData = context.getImageData(0, 0, 128, 128);
-
-		var i;
-        for (i = 0; i < imgData.data.length; i += 3)
-		{
-			imgData.data[i] = 200;
-		}
-		context.putImageData(imgData, 0, 0);
-
-		document.getElementById("alteredImageData").value = imgData.data;
     }
   </script>
 

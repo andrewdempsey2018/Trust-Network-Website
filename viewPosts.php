@@ -1,6 +1,6 @@
 <html><head><title>Get data</title></head>
 <body>
-<canvas id="canvas" width="128" height="128"></canvas>
+
 <?php
 
 $hostname = "localhost";
@@ -22,9 +22,7 @@ $query = mysqli_query($dbconnect, "SELECT * FROM user_posts") or die (mysqli_err
 
 while ($row = mysqli_fetch_array($query))
 {
-
-$anotherVar = $row['text'];
-$someVar = $row['images'];
+    $anotherVar = $row['text'];
 }
 
 ?>
