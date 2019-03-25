@@ -20,19 +20,28 @@ if($dbconnect->connect_error)
 #select the specified database
 $query = mysqli_query($dbconnect, "SELECT * FROM user_posts") or die (mysqli_error($dbconnect));
 
+?>
+
+<table border="1" align="center">
+<tr>
+  <td>Message</td>
+</tr>
+
+<?php
+
 while ($row = mysqli_fetch_array($query))
 {
-    $anotherVar = $row['text'];
+    $infoFromDB = $row['text'];
+	echo
+	"<tr><td>{$row['text']}</td></tr>";
 }
 
 ?>
 
-<script>
-    var canvas = document.getElementById("canvas");
-    var context = canvas.getContext("2d");
-    var image = "<?php echo $someVar; ?>";
+</table>
 
-document.getElementById('canvas').src = image;
+<script>
+
 
 </script>
 
