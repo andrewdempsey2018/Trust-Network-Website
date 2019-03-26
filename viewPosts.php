@@ -1,5 +1,7 @@
-<html><head><title>Get data</title></head>
+<html><head><title>View Posts</title></head>
 <body>
+
+<h1>View Posts</h1>
 
 <?php
 
