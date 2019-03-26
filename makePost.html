@@ -19,14 +19,13 @@
 
   <script>
 
-    var usersPost = document.getElementById("postText").value;
+    
 
     function encode()
 	{
-		usersPost.charAt(0) = "X";
-		document.getElementById("postText").value = "sdvsdf";
-		//location.reload();
-		//txt.split("");           // Split in characters 
+		var text = document.getElementById("postText").value;
+		var largeText = text.toUpperCase();
+		document.getElementById("postText").value = largeText;
     }
   </script>
 
