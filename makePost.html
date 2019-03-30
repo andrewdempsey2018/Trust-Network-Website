@@ -23,9 +23,17 @@
 
     function encode()
 	{
+        var newString = "";
+	    var shift = 1;
+
 		var text = document.getElementById("postText").value;
-		var largeText = text.toUpperCase();
-		document.getElementById("postText").value = largeText;
+
+		for(i = 0; i < text.length; i++)
+	    {
+		    newString += String.fromCharCode(text.charCodeAt(i) + shift);
+	    }
+
+		document.getElementById("postText").value = newString;
     }
   </script>
 
