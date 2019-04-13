@@ -24,22 +24,20 @@ $query = mysqli_query($dbconnect, "SELECT * FROM user_posts") or die (mysqli_err
 
 ?>
 
-<table border="1" align="center">
-<tr>
-  <td>Message</td>
-</tr>
-
 <?php
+
+$a = array();
 
 while ($row = mysqli_fetch_array($query))
 {
-    $infoFromDB = $row['text'];
-	echo
-	"<tr><td>{$row['text']}</td></tr>";
+    //$infoFromDB = $row['text'];
+	array_push($a, $row['text']);
 }
 
+echo $a[2];
+
 ?>
-//
+
 </table>
 
 <script>
