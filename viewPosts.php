@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_array($query))
 	array_push($a, $row['text']);
 }
 
-echo $a[2];
+//echo $a[2];
 
 ?>
 
@@ -45,26 +45,12 @@ $js_array = json_encode($a);
 echo "var javascript_array = ". $js_array . ";\n";
 ?>
 
-document.write("<br>" + javascript_array[3]);
-
-var button = document.createElement("button");
-button.style.width = '64px';
-button.style.height = '32px';
-document.body.appendChild(button);
-
-button.onClick = function() {document.write("XXX")};
-
-function hi()
-{
-	document.write("XXX");
-}
-</script>
+/*document.write("<br>" + javascript_array[3]);
 
 <button id="1" onClick="reply_click(this.id)">B1</button>
 <button id="2" onClick="reply_click(this.id)">B2</button>
 <button id="3" onClick="reply_click(this.id)">B3</button>
 
-<script type="text/javascript">
 function reply_click(clicked_id)
 {
     //alert(clicked_id);
@@ -77,6 +63,34 @@ function reply_click(clicked_id)
 	if(clicked_id == 2)
 	{
 
+	}
+}*/
+</script>
+
+<table border="1">
+<tr>
+    <td id="r1"><script>document.write(javascript_array[0])</script></td>
+    <td>___________</td>
+	<td><button id="0" onClick="reply_click(this.id)">B0</button></td>
+</tr>
+<tr>
+    <td><script>document.write(javascript_array[1])</script></td>
+    <td>___________</td>
+	<td><button id="1" onClick="reply_click(this.id)">B1</button></td>
+</tr>
+<tr>
+    <td><script>document.write(javascript_array[2])</script></td>
+    <td>___________</td>
+	<td><button id="2" onClick="reply_click(this.id)">B2</button></td>
+</tr>
+</table>
+
+<script type="text/javascript">
+function reply_click(clicked_id)
+{
+    if(clicked_id == 0)
+	{
+	    document.getElementById("r1").innerHTML = "sss";
 	}
 }
 </script>
