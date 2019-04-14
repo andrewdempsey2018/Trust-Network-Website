@@ -46,6 +46,39 @@ echo "var javascript_array = ". $js_array . ";\n";
 ?>
 
 document.write("<br>" + javascript_array[3]);
+
+var button = document.createElement("button");
+button.style.width = '64px';
+button.style.height = '32px';
+document.body.appendChild(button);
+
+button.onClick = function() {document.write("XXX")};
+
+function hi()
+{
+	document.write("XXX");
+}
+</script>
+
+<button id="1" onClick="reply_click(this.id)">B1</button>
+<button id="2" onClick="reply_click(this.id)">B2</button>
+<button id="3" onClick="reply_click(this.id)">B3</button>
+
+<script type="text/javascript">
+function reply_click(clicked_id)
+{
+    //alert(clicked_id);
+	if(clicked_id == 1)
+	{
+	    javascript_array[3] = "sdfsd";
+		window.location.reload();
+	}
+
+	if(clicked_id == 2)
+	{
+
+	}
+}
 </script>
 
 </body>
