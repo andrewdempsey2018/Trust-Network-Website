@@ -38,11 +38,14 @@ echo $a[2];
 
 ?>
 
-</table>
-
 <script>
+<?php
+$php_array = array('abc','def','ghi');
+$js_array = json_encode($a);
+echo "var javascript_array = ". $js_array . ";\n";
+?>
 
-
+document.write("<br>" + javascript_array[3]);
 </script>
 
 </body>
