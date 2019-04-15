@@ -69,50 +69,77 @@ function reply_click(clicked_id)
 
 <table border="1">
 <tr>
-    <td id="r1" width="20%"><script>document.write(javascript_array[0])</script></td>
+    <td id="row0" width="20%"><script>document.write(javascript_array[0])</script></td>
     <td>___________</td>
 	<td><button id="0" onClick="reply_click(this.id)">Unlock</button></td>
 </tr>
 <tr>
-    <td><script>document.write(javascript_array[1])</script></td>
+    <td id="row1" width="20%"><script>document.write(javascript_array[1])</script></td>
     <td>___________</td>
 	<td><button id="1" onClick="reply_click(this.id)">Unlock</button></td>
 </tr>
 <tr>
-    <td><script>document.write(javascript_array[2])</script></td>
+    <td id="row2" width="20%"><script>document.write(javascript_array[2])</script></td>
     <td>___________</td>
 	<td><button id="2" onClick="reply_click(this.id)">Unlock</button></td>
 </tr>
-</table>
+<tr>
+    <td id="row3" width="20%"><script>document.write(javascript_array[3])</script></td>
+    <td>___________</td>
+	<td><button id="3" onClick="reply_click(this.id)">Unlock</button></td>
+</tr>
+<tr>
+    <td id="row4" width="20%"><script>document.write(javascript_array[4])</script></td>
+    <td>___________</td>
+	<td><button id="4" onClick="reply_click(this.id)">Unlock</button></td>
+</tr>
+<tr>
+    <td id="row5" width="20%"><script>document.write(javascript_array[5])</script></td>
+    <td>___________</td>
+	<td><button id="5" onClick="reply_click(this.id)">Unlock</button></td>
+</tr>
+<tr>
+    <td id="row6" width="20%"><script>document.write(javascript_array[6])</script></td>
+    <td>___________</td>
+	<td><button id="6" onClick="reply_click(this.id)">Unlock</button></td>
+</tr>
+<tr>
+    <td id="row7" width="20%"><script>document.write(javascript_array[7])</script></td>
+    <td>___________</td>
+	<td><button id="7" onClick="reply_click(this.id)">Unlock</button></td>
+</tr>
+<tr>
+    <td id="row8" width="20%"><script>document.write(javascript_array[8])</script></td>
+    <td>___________</td>
+	<td><button id="8" onClick="reply_click(this.id)">Unlock</button></td>
+</tr>
+<tr>
+    <td id="row9" width="20%"><script>document.write(javascript_array[9])</script></td>
+    <td>___________</td>
+	<td><button id="9" onClick="reply_click(this.id)">Unlock</button></td>
+</tr>
 
-<script type="text/javascript">
-function reply_click(clicked_id)
-{
-    if(clicked_id == 0)
-	{
-	    document.getElementById("r1").textContent = decode(javascript_array[0]);
-	}
-}
-</script>
 
 <script>
+function reply_click(clicked_id)
+{
+    document.getElementById("row" + clicked_id).textContent = decode(javascript_array[clicked_id]);
+}
 
-    function decode(arg1)
-	{
-        var text = arg1;
-		var shift = 1;
-		var newString = "";
+function decode(arg1)
+{
+    var text = arg1;
+    var shift = 1;
+    var newString = "";
 
-		for(i = 0; i < text.length; i++)
-	    {
-		    newString += String.fromCharCode(text.charCodeAt(i) - shift);
-	    }
-
-		//document.getElementById("postText").value = newString;
-
-		return newString;
+    for(i = 0; i < text.length; i++)
+    {
+       newString += String.fromCharCode(text.charCodeAt(i) - shift);
     }
-  </script>
+
+	return newString;
+}
+</script>
 
 </body>
 </html>
