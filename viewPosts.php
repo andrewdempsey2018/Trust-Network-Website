@@ -69,19 +69,19 @@ function reply_click(clicked_id)
 
 <table border="1">
 <tr>
-    <td id="r1"><script>document.write(javascript_array[0])</script></td>
+    <td id="r1" width="20%"><script>document.write(javascript_array[0])</script></td>
     <td>___________</td>
-	<td><button id="0" onClick="reply_click(this.id)">B0</button></td>
+	<td><button id="0" onClick="reply_click(this.id)">Unlock</button></td>
 </tr>
 <tr>
     <td><script>document.write(javascript_array[1])</script></td>
     <td>___________</td>
-	<td><button id="1" onClick="reply_click(this.id)">B1</button></td>
+	<td><button id="1" onClick="reply_click(this.id)">Unlock</button></td>
 </tr>
 <tr>
     <td><script>document.write(javascript_array[2])</script></td>
     <td>___________</td>
-	<td><button id="2" onClick="reply_click(this.id)">B2</button></td>
+	<td><button id="2" onClick="reply_click(this.id)">Unlock</button></td>
 </tr>
 </table>
 
@@ -90,10 +90,29 @@ function reply_click(clicked_id)
 {
     if(clicked_id == 0)
 	{
-	    document.getElementById("r1").innerHTML = "sss";
+	    document.getElementById("r1").textContent = decode(javascript_array[0]);
 	}
 }
 </script>
+
+<script>
+
+    function decode(arg1)
+	{
+        var text = arg1;
+		var shift = 1;
+		var newString = "";
+
+		for(i = 0; i < text.length; i++)
+	    {
+		    newString += String.fromCharCode(text.charCodeAt(i) - shift);
+	    }
+
+		//document.getElementById("postText").value = newString;
+
+		return newString;
+    }
+  </script>
 
 </body>
 </html>
