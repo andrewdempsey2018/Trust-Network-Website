@@ -1,41 +1,60 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-  <body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Image Opener</title>
+    </head>
 
-  <p>Trust Social Network - Make a post</p>
+    <body>
 
-  <form action="makePost.php" method="POST">
+		<input id="fileToUpload" type="file" name="aFile">
+		<br>
 
-      Your post: <br>
-        <textarea name="postText" id="postText" rows="10" cols="30"></textarea><br><br>
+        <canvas id="imageCanvas" src="noimage.jpg" width="640" height="480"></canvas>
+		<br>
 
-		 
-		<input type="submit" value="Submit" name="submit">
+        <button onclick="uploadImage()">Upload</button>
+		<br>
 
+		<p>Type your message</p>
+        <form action="makePost.php" method="POST">
+            <textarea name="postText" id="postText" rows="5" cols="70"></textarea><br><br>
+            <input type="submit" value="Submit" name="submit">
+			<input type="hidden" id="imagedata" name="imagedata" />
+        </form>
+        <script>
 
-  </form>
+            var canvas = document.getElementById("imageCanvas");
+            var canvasContext = canvas.getContext("2d");
 
-  <button onclick="encode()">Encode</button> 
+			var base_image = new Image();
+            base_image.src = "noimage.jpg";
+            canvasContext.drawImage(base_image, 100, 100);
 
-  <script>
+            function uploadImage()
+            {
+                var uploadedImage = document.createElement("IMG");
 
-    
+                var fileToOpen = document.getElementById("fileToUpload").value;
+		
+				fileToOpen = fileToOpen.replace("C:\\fakepath\\","");
 
-    function encode()
-	{
-        var newString = "";
-	    var shift = 1;
+				uploadedImage.setAttribute("src", fileToOpen);
+                uploadedImage.setAttribute("width", "640");
+                uploadedImage.setAttribute("height", "480");
+                uploadedImage.setAttribute("alt", "Uploaded image");
+                //document.body.appendChild(uploadedImage); //!
 
-		var text = document.getElementById("postText").value;
+				canvasContext.drawImage(uploadedImage,0,0,640,480);
 
-		for(i = 0; i < text.length; i++)
-	    {
-		    newString += String.fromCharCode(text.charCodeAt(i) + shift);
-	    }
+				var imageData = canvasContext.getImageData(0, 0, 640, 480);
 
-		document.getElementById("postText").value = newString;
-    }
-  </script>
+				document.getElementById("imagedata").value = imageData.data;
 
-</body>
+				//document.getElementById("imagedata").value = "1,2,3";
+
+            }
+
+        </script>
+    </body>
 </html>

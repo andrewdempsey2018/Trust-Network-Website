@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$db = "posts";
+$db = "postsdb";
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
@@ -15,8 +15,9 @@ if ($dbconnect->connect_error)
 if(isset($_POST['submit'])) 
 {
     $postText=$_POST['postText'];
+	$imagedata=$_POST['imagedata'];
 
-    $query = "INSERT INTO user_posts (text) VALUES ('$postText')";
+    $query = "INSERT INTO poststable (text, image) VALUES ('$postText', '$imagedata')";
 
     if(!mysqli_query($dbconnect, $query))
 	{
