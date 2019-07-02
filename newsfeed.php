@@ -1,9 +1,9 @@
-<html><head><title>View Posts</title></head>
+<html><head><title>The Trust Network</title></head>
 <body>
 
-<h1>View Posts</h1>
+<h1>Welcome Mark</h1>
 
-<canvas id="imageCanvas" width="640" height="480"></canvas> 
+<canvas id="imageCanvas" width="320" height="240"></canvas> 
 
 <?php
 
@@ -29,7 +29,7 @@ while ($row = mysqli_fetch_array($query))
 {
     array_push($messages, $row['text'], $row['image']);
 }
-echo $messages[2];
+echo $messages[8];
 
 ?>
 
@@ -38,7 +38,7 @@ echo $messages[2];
 //{
 	var canvas = document.getElementById("imageCanvas");
 	var canvasContext = canvas.getContext("2d");
-	var imageValues = '<?php echo $messages[3] ?>';
+	var imageValues = '<?php echo $messages[9] ?>';
 
 	imageValues = imageValues.split(',');
 
@@ -47,16 +47,15 @@ echo $messages[2];
 		imageValues[i] = parseInt(imageValues[i]);
 	}
 
-	var imageData = new ImageData(640, 480);
+	var imageData = new ImageData(320, 240);
 
 	imageData.data.set(imageValues);
 
 	canvasContext.putImageData(imageData, 0, 0);
 
-	alert(imageValues.length);
+	//alert(imageValues.length);
 //}
 </script>
 
-<button onclick="loadImage()">Click me</button> 
 </body>
 </html>

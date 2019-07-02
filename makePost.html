@@ -2,27 +2,65 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Image Opener</title>
+        <title>Make a post</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" type="text/css" href="resources/styles.css">
     </head>
 
     <body>
 
-		<input id="fileToUpload" type="file" name="aFile">
-		<br>
+		<!-- header section -->
+        <div class="container bg-color-orange-dark">
+            <div class="row">
+                <div class="col-sm">
+					<img src="resources/images/icon.png" alt="Trust Network Logo">
+                </div>
+				<div class="col-sm">
+					<h1>say something...</h1>
+                </div>
+				<div class="col-sm">
+					<button class="btn btn-primary" onclick="">Settings</button>
+					<button class="btn btn-primary" onclick="">Logout</button>
+                </div>
+            </div>
+        </div>
 
-        <canvas id="imageCanvas" src="noimage.jpg" width="640" height="480"></canvas>
-		<br>
+		<!-- mid section -->
+		<div class="container bg-color-orange-medium">
+			<div class="row">
+				<div class="col-sm">
+					<div class="row">
+						<canvas id="imageCanvas" src="noimage.jpg" width="320" height="240"></canvas>
+					</div>
+					<div class="row">
+						<input id="fileToUpload" type="file" name="aFile">
+					    <button class="btn btn-primary" onclick="uploadImage()">Upload</button>
+					</div>
+				</div>
+				<div class="col-sm">
+					<form action="makePost.php" method="POST">
+						<textarea name="postText" id="postText" rows="5" cols="70"></textarea><br><br>
+						<input class="btn btn-primary" type="submit" value="Submit" name="submit">
+						<input type="hidden" id="imagedata" name="imagedata" />
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<!-- footer section -->
+		<div class="container bg-color-orange-light">
+			<div class="row">
+				<div class="col-sm">
+					<p>hi</p>
+				</div>
+			</div>
+		</div>
 
-        <button onclick="uploadImage()">Upload</button>
-		<br>
-
-		<p>Type your message</p>
-        <form action="makePost.php" method="POST">
-            <textarea name="postText" id="postText" rows="5" cols="70"></textarea><br><br>
-            <input type="submit" value="Submit" name="submit">
-			<input type="hidden" id="imagedata" name="imagedata" />
-        </form>
-        <script>
+		<script>
 
             var canvas = document.getElementById("imageCanvas");
             var canvasContext = canvas.getContext("2d");
@@ -40,14 +78,14 @@
 				fileToOpen = fileToOpen.replace("C:\\fakepath\\","");
 
 				uploadedImage.setAttribute("src", fileToOpen);
-                uploadedImage.setAttribute("width", "640");
-                uploadedImage.setAttribute("height", "480");
+                uploadedImage.setAttribute("width", "320");
+                uploadedImage.setAttribute("height", "240");
                 uploadedImage.setAttribute("alt", "Uploaded image");
                 //document.body.appendChild(uploadedImage); //!
 
-				canvasContext.drawImage(uploadedImage,0,0,640,480);
+				canvasContext.drawImage(uploadedImage,0,0,320,240);
 
-				var imageData = canvasContext.getImageData(0, 0, 640, 480);
+				var imageData = canvasContext.getImageData(0, 0, 320, 240);
 
 				document.getElementById("imagedata").value = imageData.data;
 
