@@ -1,7 +1,27 @@
-<html><head><title>The Trust Network</title></head>
+<html>
+<head>
+<title>The Trust Network</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="resources/styles.css">
+</head>
 <body>
 
 <h1>Welcome Mark</h1>
+
+<canvas id="canvas0" width="320" height="240"></canvas>
+<canvas id="canvas1" width="320" height="240"></canvas>
+<canvas id="canvas2" width="320" height="240"></canvas>
+<canvas id="canvas3" width="320" height="240"></canvas>
+<canvas id="canvas4" width="320" height="240"></canvas>
+<canvas id="canvas5" width="320" height="240"></canvas>
+<canvas id="canvas6" width="320" height="240"></canvas>
+<canvas id="canvas7" width="320" height="240"></canvas>
+<canvas id="canvas8" width="320" height="240"></canvas>
+<canvas id="canvas9" width="320" height="240"></canvas>
 
 <?php
 
@@ -31,36 +51,38 @@ while ($row = mysqli_fetch_array($query))
     array_push($text, $row['text']);
     array_push($image, $row['image']);
 }
-echo $name[0];
 
 ?>
 
 <script>
-//function loadImage()
-//{
-	var canvas = document.createElement('canvas');
-	canvas.width = 320;
-    canvas.height = 240;
-	var canvasContext = canvas.getContext("2d");
-	var imageValues = '<?php echo $image[0] ?>';
 
-    document.body.appendChild(canvas);
-
-	imageValues = imageValues.split(',');
-
-	for(var i = 0; i < imageValues.length; i++)
-	{
-		imageValues[i] = parseInt(imageValues[i]);
-	}
-
+	var canvas = null;
+	var canvasNumber = null;
+	var canvasContext = null;
+	var imageValues = null;
 	var imageData = new ImageData(320, 240);
 
-	imageData.data.set(imageValues);
+	var jArray= <?php echo json_encode($image); ?>;
 
-	canvasContext.putImageData(imageData, 0, 0);
+	for(var i = 0; i < 10; i++)
+	{
+		imageValues = jArray[i];
 
-	//alert(imageValues.length);
-//}
+		imageValues = imageValues.split(',');
+
+		for(var j = 0; j < imageValues.length; j++)
+		{
+			imageValues[j] = parseInt(imageValues[j]);
+		}
+
+		imageData.data.set(imageValues);
+
+		canvas = document.getElementById("canvas" + i);
+		canvasContext = canvas.getContext("2d");
+		canvasContext.putImageData(imageData, 0, 0);
+		
+	}
+window.alert("OK");
 </script>
 
 </body>
