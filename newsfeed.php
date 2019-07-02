@@ -3,8 +3,6 @@
 
 <h1>Welcome Mark</h1>
 
-<canvas id="imageCanvas" width="320" height="240"></canvas> 
-
 <?php
 
 $hostname = "localhost";
@@ -23,22 +21,30 @@ if($dbconnect->connect_error)
 #select the specified database
 $query = mysqli_query($dbconnect, "SELECT * FROM poststable") or die (mysqli_error($dbconnect));
 
-$messages = array();
+$name = array();
+$text = array();
+$image = array();
 
 while ($row = mysqli_fetch_array($query))
 {
-    array_push($messages, $row['text'], $row['image']);
+    array_push($name, $row['name']);
+    array_push($text, $row['text']);
+    array_push($image, $row['image']);
 }
-echo $messages[8];
+echo $name[0];
 
 ?>
 
 <script>
 //function loadImage()
 //{
-	var canvas = document.getElementById("imageCanvas");
+	var canvas = document.createElement('canvas');
+	canvas.width = 320;
+    canvas.height = 240;
 	var canvasContext = canvas.getContext("2d");
-	var imageValues = '<?php echo $messages[9] ?>';
+	var imageValues = '<?php echo $image[0] ?>';
+
+    document.body.appendChild(canvas);
 
 	imageValues = imageValues.split(',');
 
