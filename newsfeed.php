@@ -12,16 +12,79 @@
 
 <h1>Welcome Mark</h1>
 
-<canvas id="canvas0" width="320" height="240"></canvas>
-<canvas id="canvas1" width="320" height="240"></canvas>
-<canvas id="canvas2" width="320" height="240"></canvas>
-<canvas id="canvas3" width="320" height="240"></canvas>
-<canvas id="canvas4" width="320" height="240"></canvas>
-<canvas id="canvas5" width="320" height="240"></canvas>
-<canvas id="canvas6" width="320" height="240"></canvas>
-<canvas id="canvas7" width="320" height="240"></canvas>
-<canvas id="canvas8" width="320" height="240"></canvas>
-<canvas id="canvas9" width="320" height="240"></canvas>
+<div class="container">
+    <div class="row bg-color-orange-dark">
+        <div class="col-sm">
+            <canvas id="canvas0" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+			<p id="textArea1"></p>
+        </div>
+    </div>
+    <div class="row bg-color-orange-light">
+        <div class="col-sm">
+            <canvas id="canvas1" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-dark">
+        <div class="col-sm">
+            <canvas id="canvas2" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-light">
+        <div class="col-sm">
+            <canvas id="canvas3" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-dark">
+        <div class="col-sm">
+            <canvas id="canvas4" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-light">
+        <div class="col-sm">
+            <canvas id="canvas5" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-dark">
+        <div class="col-sm">
+            <canvas id="canvas6" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-light">
+        <div class="col-sm">
+            <canvas id="canvas7" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-dark">
+        <div class="col-sm">
+            <canvas id="canvas8" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+    <div class="row bg-color-orange-light">
+        <div class="col-sm">
+            <canvas id="canvas9" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+        </div>
+    </div>
+</div>
 
 <?php
 
@@ -62,11 +125,13 @@ while ($row = mysqli_fetch_array($query))
 	var imageValues = null;
 	var imageData = new ImageData(320, 240);
 
-	var jArray= <?php echo json_encode($image); ?>;
+	//take the images from the php code and feed them into a javascript array
+	//for easy iteration over each image
+	var imageArray = <?php echo json_encode($image); ?>;
 
 	for(var i = 0; i < 10; i++)
 	{
-		imageValues = jArray[i];
+		imageValues = imageArray[i];
 
 		imageValues = imageValues.split(',');
 
@@ -82,7 +147,8 @@ while ($row = mysqli_fetch_array($query))
 		canvasContext.putImageData(imageData, 0, 0);
 		
 	}
-window.alert("OK");
+
+	document.getElementById("textArea1").textContent = "sdfsdsdfsdf";
 </script>
 
 </body>
