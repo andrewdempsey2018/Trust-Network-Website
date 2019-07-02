@@ -149,6 +149,7 @@ while ($row = mysqli_fetch_array($query))
 	}
 
 	document.getElementById("textArea1").textContent = "sdfsdsdfsdf";
+
 </script>
 
 </body>
