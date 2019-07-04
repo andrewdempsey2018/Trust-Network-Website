@@ -2,16 +2,20 @@
 <head>
 <title>The Trust Network</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Comment -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+	<!-- Comment -->
 	<link rel="stylesheet" type="text/css" href="resources/styles.css">
 </head>
 <body>
 
+<!-- Comment -->
 <h1 id="welcomeText"></h1>
 
+<!-- Comment -->
 <div class="container">
     <div class="row bg-color-orange-dark">
         <div class="col-sm">
@@ -106,12 +110,14 @@
 
 <?php
 
+/* Connect to the database that contains all of the posts and images
+that users of the website have uploaded */
 $hostname = "localhost";
 $username = "root";
 $password = "";
 $db = "postsdb";
 
-#connect to MySQL
+/* Connect to MariaDB and produce and error if the connection fails */
 $dbconnect=mysqli_connect($hostname, $username, $password, $db) or die("Problem connecting to database");
 
 if($dbconnect->connect_error)
@@ -119,7 +125,9 @@ if($dbconnect->connect_error)
     die("Database connection failed: " . $dbconnect->connect_error);
 }
 
-#select the specified database
+/* populate the $query varable with the complete text of all of the posts
+in the data base. This variable will then be processd later to extract
+its contents in a more manageable way */
 $query = mysqli_query($dbconnect, "SELECT * FROM poststable") or die (mysqli_error($dbconnect));
 
 $name = array();
@@ -137,6 +145,8 @@ while ($row = mysqli_fetch_array($query))
 
 <script>
 
+	/* These variables will be used several times in the
+	for loop. They are responsible for storing image information */
 	var canvas = null;
 	var canvasNumber = null;
 	var canvasContext = null;
@@ -164,6 +174,8 @@ while ($row = mysqli_fetch_array($query))
 		canvasContext = canvas.getContext("2d");
 		canvasContext.putImageData(imageData, 0, 0);
 
+		/* Whilst iterating over the images, assign the relevent text message to
+		the corresponding container */
 		var textArray = <?php echo json_encode($text); ?>;
 		document.getElementById("textArea" + i).textContent = textArray[i];
 		
