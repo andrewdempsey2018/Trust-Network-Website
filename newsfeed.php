@@ -12,6 +12,9 @@
 </head>
 <body>
 
+<!-- temporary link to make post page -->
+<a href="makepost.html">Make a post</a>
+
 <!-- Comment -->
 <h1 id="welcomeText"></h1>
 
@@ -31,6 +34,7 @@
 
     <div class="row bg-color-orange-light">
 		<div class="col-sm">
+			<p id="headingArea1"></p>
 			<p id="textArea1"></p>
         </div>
         <div class="col-sm">
@@ -43,12 +47,14 @@
             <canvas id="canvas2" width="320" height="240"></canvas>
         </div>
 		<div class="col-sm">
+			<p id="headingArea2"></p>
 			<p id="textArea2"></p>
         </div>
     </div>
 
     <div class="row bg-color-orange-light">
 		<div class="col-sm">
+			<p id="headingArea3"></p>
 			<p id="textArea3"></p>
         </div>
         <div class="col-sm">
@@ -61,12 +67,14 @@
             <canvas id="canvas4" width="320" height="240"></canvas>
         </div>
 		<div class="col-sm">
+			<p id="headingArea4"></p>
 			<p id="textArea4"></p>
         </div>
     </div>
 
     <div class="row bg-color-orange-light">
 		<div class="col-sm">
+			<p id="headingArea5"></p>
 			<p id="textArea5"></p>
         </div>
         <div class="col-sm">
@@ -79,12 +87,14 @@
             <canvas id="canvas6" width="320" height="240"></canvas>
 		</div>
         <div class="col-sm">
+			<p id="headingArea6"></p>
 			<p id="textArea6"></p>
         </div>
     </div>
 
     <div class="row bg-color-orange-light">
         <div class="col-sm">
+			<p id="headingArea7"></p>
 			<p id="textArea7"></p>
         </div>
         <div class="col-sm">
@@ -97,12 +107,14 @@
             <canvas id="canvas8" width="320" height="240"></canvas>
         </div>
         <div class="col-sm">
+			<p id="headingArea8"></p>
 			<p id="textArea8"></p>
         </div>
     </div>
 
     <div class="row bg-color-orange-light">
 		<div class="col-sm">
+			<p id="headingArea9"></p>
 		    <p id="textArea9"></p>
         </div>
         <div class="col-sm">
@@ -177,9 +189,9 @@ while ($row = mysqli_fetch_array($query))
 		canvasContext = canvas.getContext("2d");
 		canvasContext.putImageData(imageData, 0, 0);
 
-		 
+		
 		var nameArray = <?php echo json_encode($name); ?>;
-		document.getElementById("headingArea" + i).textContent = nameArray[i];
+		document.getElementById("headingArea" + i).textContent = nameArray[i] + " said...";
 
 		/* Whilst iterating over the images, assign the relevent text message to
 		the corresponding container */
@@ -203,7 +215,7 @@ while ($row = mysqli_fetch_array($query))
 	a class called "welcomeText. This class is accessed and its
 	textContent attribute is modified to reflect the username of
 	the user who has logged in "*/
-	document.getElementById("welcomeText").textContent = "Welcome " + username;
+	document.getElementById("welcomeText").textContent = "Welcome ";// + username;
 
 	/* */
 	function unlock(variable)

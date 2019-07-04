@@ -5,7 +5,8 @@ $username = "root";
 $password = "";
 $db = "postsdb";
 
-$name = "Mark";
+/* retreive the username from the cookie generated at login */
+$name = $_COOKIE["user"];
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
@@ -28,6 +29,8 @@ if(isset($_POST['submit']))
 	else
 	{
         echo "Your post to the Trust Social Network has been made";
+		/* after post was made successfully, send the user to the news feed */
+		header("Location: newsfeed.php");
     }
 
 }
