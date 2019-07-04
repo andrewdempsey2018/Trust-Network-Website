@@ -6,3 +6,9 @@ Columns
 	name - text
 	text - text
 	image - longtext
+
+Database name: users
+Table name: userlist
+	email - text
+	password - text
+	username - text
