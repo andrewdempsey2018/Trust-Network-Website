@@ -22,7 +22,10 @@
             <canvas id="canvas0" width="320" height="240"></canvas>
         </div>
 		<div class="col-sm">
+			<p id="headingArea0"></p>
 			<p id="textArea0"></p>
+			<input type="text" name="key0">
+			<button onclick="unlock(0)">Trust!</button> 
         </div>
     </div>
 
@@ -174,6 +177,10 @@ while ($row = mysqli_fetch_array($query))
 		canvasContext = canvas.getContext("2d");
 		canvasContext.putImageData(imageData, 0, 0);
 
+		 
+		var nameArray = <?php echo json_encode($name); ?>;
+		document.getElementById("headingArea" + i).textContent = nameArray[i];
+
 		/* Whilst iterating over the images, assign the relevent text message to
 		the corresponding container */
 		var textArray = <?php echo json_encode($text); ?>;
@@ -197,6 +204,13 @@ while ($row = mysqli_fetch_array($query))
 	textContent attribute is modified to reflect the username of
 	the user who has logged in "*/
 	document.getElementById("welcomeText").textContent = "Welcome " + username;
+
+	/* */
+	function unlock(variable)
+	{
+		textArray[variable] = "decoded message";
+		document.getElementById("textArea" + variable).textContent = textArray[variable];
+	}
 
 </script>
 
