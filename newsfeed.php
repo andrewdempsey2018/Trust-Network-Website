@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h1>Welcome Mark</h1>
+<h1 id="welcomeText"></h1>
 
 <div class="container">
     <div class="row bg-color-orange-dark">
