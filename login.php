@@ -53,16 +53,25 @@ and the username array in order to asertain the
 corresponding values */
 $indexOfUser = array_search($emailFromLogin, $email);
 
-//
+/* check the password provided against the one
+stored in the users database, if they are equal,
+allow the user to proceed to the newsfeed page
+otherwise, inform the user that their attempt
+wan unseccessful */
 if($passwordFromLogin == $password[$indexOfUser])
 {
-	//on successful login, rediredt user to main newsfeed
+	/* on successful login, rediredt user to main newsfeed */
 	echo "Sucsess";
 	header("Location: newsfeed.php");
+
+	/* create a session cookie that containes the username or the
+    user who has logged in. This username will be needed for various
+    operations such as posting a message on the site */
+    setCookie("user", $username[$indexOfUser]);
 }
 else
 {
-	//failing login, inform the user
+	/* Failing login, inform the user */
 	echo "Username or password entered incorrectly";
 }
 
