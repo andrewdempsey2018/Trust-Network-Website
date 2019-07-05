@@ -212,7 +212,7 @@ while ($row = mysqli_fetch_array($query))
 	a class called welcomeText. This class is accessed and its
 	textContent attribute is modified to reflect the username of
 	the user who has logged in */
-	document.getElementById("welcomeText").textContent = "Welcome " + username;
+	document.getElementById("welcomeText").textContent = "We5lcome " + username;
 
 	/* */
 	function unlock(variable)

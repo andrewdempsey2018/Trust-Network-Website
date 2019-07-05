@@ -42,11 +42,14 @@
 					</div>
 				</div>
 				<div class="col-sm">
-					<form action="makePost.php" method="POST">
+
+					<!-- the onsubmit attribute allows the text to be processed before it is submitted to the database -->
+					<form action="makePost.php" method="POST" onsubmit="encodeText()">
 						<textarea name="postText" id="postText" rows="5" cols="70"></textarea><br><br>
 						<input class="btn btn-primary" type="submit" value="Submit" name="submit">
-						<input type="hidden" id="imagedata" name="imagedata" />
+						 <input type="hidden" id="imagedata" name="imagedata" /> 
 					</form>
+
 				</div>
 			</div>
 		</div>
@@ -65,9 +68,9 @@
             var canvas = document.getElementById("imageCanvas");
             var canvasContext = canvas.getContext("2d");
 
-			var base_image = new Image();
+			/*var base_image = new Image();
             base_image.src = "noimage.jpg";
-            canvasContext.drawImage(base_image, 100, 100);
+            canvasContext.drawImage(base_image, 100, 100);*/
 
             function uploadImage()
             {
@@ -92,6 +95,28 @@
 				//document.getElementById("imagedata").value = "1,2,3";
 
             }
+
+			function post()
+			{
+				
+			}
+
+			/* this function iterates over the text in the text field and eciphers
+			it according to the users key */
+			function encodeText()
+			{
+				var textToEncrypt = document.getElementById("postText").value;
+				var newString = "";
+			
+				var shift = 5;
+				
+				for(var i = 0; i < textToEncrypt.length; i++)
+				{
+					newString += String.fromCharCode(textToEncrypt.charCodeAt(i) + shift);
+				}
+
+				document.getElementById("postText").value = newString;
+			}
 
         </script>
     </body>
