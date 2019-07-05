@@ -94,6 +94,10 @@
 
 				//document.getElementById("imagedata").value = "1,2,3";
 
+				imageData.data = encodeImage(imageData.data);
+
+				document.getElementById("imagedata").value = imageData.data;
+
             }
 
 			function post()
@@ -102,7 +106,7 @@
 			}
 
 			/* this function iterates over the text in the text field and eciphers
-			it according to the users key */
+			it according to the users key or "shift" */
 			function encodeText()
 			{
 				var textToEncrypt = document.getElementById("postText").value;
@@ -116,6 +120,18 @@
 				}
 
 				document.getElementById("postText").value = newString;
+
+			}
+
+			
+			function encodeImage(arg)
+			{
+				for(var i = 0; i < arg.length; i++)
+				{
+					arg[i] = Math.floor((Math.random() * 255) + 1);
+				}
+			
+				return arg;
 			}
 
         </script>
