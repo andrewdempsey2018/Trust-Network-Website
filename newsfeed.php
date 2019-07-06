@@ -217,8 +217,17 @@ while ($row = mysqli_fetch_array($query))
 	/* */
 	function unlock(variable)
 	{
-		textArray[variable] = "decoded message";
-		document.getElementById("textArea" + variable).textContent = textArray[variable];
+		var newString = "";
+			
+		var shift = 5;
+				
+		for(var i = 0; i < textArray[variable].length; i++)
+		{
+			newString += String.fromCharCode(textArray[variable].charCodeAt(i) - shift);
+		}
+
+
+		document.getElementById("textArea" + variable).textContent = newString;
 	}
 
 </script>
