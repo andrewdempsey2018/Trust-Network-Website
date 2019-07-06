@@ -25,6 +25,14 @@
     border-radius: 4px;
 }
 
+.makePostText
+{
+	border: 2px;
+	border-color: #98d9ea; /* light blue */
+    background-color: #ffc90e; /*light orange*/
+    border-radius: 4px;
+}
+
 /* ------------------------------- Post Cells */
 /* deals with the look of each segment that holds user posts */
 

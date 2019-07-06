@@ -20,7 +20,7 @@
 					<img src="resources/images/icon.png" alt="Trust Network Logo">
                 </div>
 				<div class="col-sm">
-					<h1>say something...</h1>
+					<h1 class="welcomText">say something...</h1>
                 </div>
 				<div class="col-sm">
 					<button class="btn btn-primary" onclick="">Settings</button>
@@ -32,7 +32,7 @@
 		<!-- mid section -->
 		<div class="container bg-color-orange-medium">
 			<div class="row">
-				<div class="col-sm">
+				<div class="col-sm-12 col-lg-6">
 					<div class="row">
 						<canvas id="imageCanvas" src="noimage.jpg" width="320" height="240"></canvas>
 					</div>
@@ -41,11 +41,11 @@
 					    <button class="btn btn-primary" onclick="uploadImage()">Upload</button>
 					</div>
 				</div>
-				<div class="col-sm">
+				<div class="col-sm-12 col-lg-6">
 
 					<!-- the onsubmit attribute allows the text to be processed before it is submitted to the database -->
 					<form action="makePost.php" method="POST" onsubmit="encodeText()">
-						<textarea name="postText" id="postText" rows="5" cols="70"></textarea><br><br>
+						<textarea class="makePostText" name="postText" id="postText" rows="5" cols="40"></textarea><br><br>
 						<input class="btn btn-primary" type="submit" value="Submit" name="submit">
 						 <input type="hidden" id="imagedata" name="imagedata" /> 
 					</form>
@@ -58,7 +58,10 @@
 		<div class="container bg-color-orange-light">
 			<div class="row">
 				<div class="col-sm">
-					<p>hi</p>
+					<p>kludge</p>
+					<p>kludge</p>
+					<p>kludge</p>
+					
 				</div>
 			</div>
 		</div>

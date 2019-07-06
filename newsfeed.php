@@ -15,12 +15,12 @@
 <!-- Comment -->
 <div class="container">
     <div class="row">
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6 justify-content-center">
 			<h1 id="welcomeText" class="welcomText"></h1>
 		</div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6 justify-content-center">
 			<!-- temporary link to make post page -->
-			<button type="button" href="makepost.html" class="btn btn-outline-warning btn-lg btn-block">Post</button>
+			<a href="makePost.html" class="btn btn-warning btn-lg btn-block">Post</a>
 		</div>
 	</div>
 </div>
@@ -28,11 +28,11 @@
 <!-- Comment -->
 <div class="container">
 
-    <div class="row bg-color-orange-dark postCell">
-        <div class="col-sm">
+    <div class="row bg-color-orange-light postCell">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas0" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea0">
 			</div>
 			<div class="row textArea" id="textArea0">
@@ -45,10 +45,10 @@
     </div>
 
 	<div class="row bg-color-orange-dark postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas1" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea1">
 			</div>
 			<div class="row textArea" id="textArea1">
@@ -61,10 +61,10 @@
     </div>
 
 	<div class="row bg-color-orange-light postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas2" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea2">
 			</div>
 			<div class="row textArea" id="textArea2">
@@ -77,10 +77,10 @@
     </div>
 
 	<div class="row bg-color-orange-dark postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas3" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea3">
 			</div>
 			<div class="row textArea" id="textArea3">
@@ -93,10 +93,10 @@
     </div>
 
 	<div class="row bg-color-orange-light postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas4" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea4">
 			</div>
 			<div class="row textArea" id="textArea4">
@@ -109,10 +109,10 @@
     </div>
 
 	<div class="row bg-color-orange-dark postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas5" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea5">
 			</div>
 			<div class="row textArea" id="textArea5">
@@ -125,10 +125,10 @@
     </div>
 
 	<div class="row bg-color-orange-light postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas6" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea6">
 			</div>
 			<div class="row textArea" id="textArea6">
@@ -141,10 +141,10 @@
     </div>
 
 	<div class="row bg-color-orange-dark postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas7" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea7">
 			</div>
 			<div class="row textArea" id="textArea7">
@@ -157,10 +157,10 @@
     </div>
 
 	<div class="row bg-color-orange-light postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas8" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea8">
 			</div>
 			<div class="row textArea" id="textArea8">
@@ -173,10 +173,10 @@
     </div>
 
 	<div class="row bg-color-orange-dark postCell">
-        <div class="col-sm">
+        <div class="col-sm-12 col-lg-6">
             <canvas class="cellImage" id="canvas9" width="320" height="240"></canvas>
         </div>
-		<div class="col-sm">
+		<div class="col-sm-12 col-lg-6">
 			<div class="row headingArea" id="headingArea9">
 			</div>
 			<div class="row textArea" id="textArea9">
@@ -187,6 +187,18 @@
 			</div>
         </div>
     </div>
+
+	<!-- yet to implement next/previous page buttons -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-lg-6 justify-content-center">
+				<button type="button" class="btn btn-primary btn-lg btn-block"><< Previous Page</button>
+			</div>
+			<div class="col-sm-12 col-lg-6 justify-content-center">
+				<button type="button" class="btn btn-primary btn-lg btn-block">Next page >></button>
+			</div>
+		</div>
+	</div>
 
 </div>
 
