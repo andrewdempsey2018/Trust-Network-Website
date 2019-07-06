@@ -12,115 +12,182 @@
 </head>
 <body>
 
-<!-- temporary link to make post page -->
-<a href="makepost.html">Make a post</a>
-
 <!-- Comment -->
-<h1 id="welcomeText"></h1>
+<div class="container">
+    <div class="row">
+		<div class="col-sm">
+			<h1 id="welcomeText" class="welcomText"></h1>
+		</div>
+		<div class="col-sm">
+			<!-- temporary link to make post page -->
+			<button type="button" href="makepost.html" class="btn btn-outline-warning btn-lg btn-block">Post</button>
+		</div>
+	</div>
+</div>
 
 <!-- Comment -->
 <div class="container">
-    <div class="row bg-color-orange-dark">
+
+    <div class="row bg-color-orange-dark postCell">
         <div class="col-sm">
-            <canvas id="canvas0" width="320" height="240"></canvas>
+            <canvas class="cellImage" id="canvas0" width="320" height="240"></canvas>
         </div>
 		<div class="col-sm">
-			<p id="headingArea0"></p>
-			<p id="textArea0"></p>
-			<input type="text" name="key0">
-			<button onclick="unlock(0)">Trust!</button> 
+			<div class="row headingArea" id="headingArea0">
+			</div>
+			<div class="row textArea" id="textArea0">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key0">
+				<button class="btn btn-info" onclick="unlock(0)">Trust!</button>
+			</div>
         </div>
     </div>
 
-    <div class="row bg-color-orange-light">
-		<div class="col-sm">
-			<p id="headingArea1"></p>
-			<p id="textArea1"></p>
-        </div>
+	<div class="row bg-color-orange-dark postCell">
         <div class="col-sm">
-            <canvas id="canvas1" width="320" height="240"></canvas>
-        </div>
-    </div>
-
-    <div class="row bg-color-orange-dark">
-        <div class="col-sm">
-            <canvas id="canvas2" width="320" height="240"></canvas>
+            <canvas class="cellImage" id="canvas1" width="320" height="240"></canvas>
         </div>
 		<div class="col-sm">
-			<p id="headingArea2"></p>
-			<p id="textArea2"></p>
+			<div class="row headingArea" id="headingArea1">
+			</div>
+			<div class="row textArea" id="textArea1">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key1">
+				<button class="btn btn-info" onclick="unlock(1)">Trust!</button>
+			</div>
         </div>
     </div>
 
-    <div class="row bg-color-orange-light">
-		<div class="col-sm">
-			<p id="headingArea3"></p>
-			<p id="textArea3"></p>
-        </div>
+	<div class="row bg-color-orange-light postCell">
         <div class="col-sm">
-            <canvas id="canvas3" width="320" height="240"></canvas>
-        </div>
-    </div>
-
-    <div class="row bg-color-orange-dark">
-        <div class="col-sm">
-            <canvas id="canvas4" width="320" height="240"></canvas>
+            <canvas class="cellImage" id="canvas2" width="320" height="240"></canvas>
         </div>
 		<div class="col-sm">
-			<p id="headingArea4"></p>
-			<p id="textArea4"></p>
+			<div class="row headingArea" id="headingArea2">
+			</div>
+			<div class="row textArea" id="textArea2">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key2">
+				<button class="btn btn-info" onclick="unlock(2)">Trust!</button>
+			</div>
         </div>
     </div>
 
-    <div class="row bg-color-orange-light">
+	<div class="row bg-color-orange-dark postCell">
+        <div class="col-sm">
+            <canvas class="cellImage" id="canvas3" width="320" height="240"></canvas>
+        </div>
 		<div class="col-sm">
-			<p id="headingArea5"></p>
-			<p id="textArea5"></p>
-        </div>
-        <div class="col-sm">
-            <canvas id="canvas5" width="320" height="240"></canvas>
-        </div>
-    </div>
-
-    <div class="row bg-color-orange-dark">
-        <div class="col-sm">
-            <canvas id="canvas6" width="320" height="240"></canvas>
-		</div>
-        <div class="col-sm">
-			<p id="headingArea6"></p>
-			<p id="textArea6"></p>
+			<div class="row headingArea" id="headingArea3">
+			</div>
+			<div class="row textArea" id="textArea3">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key3">
+				<button class="btn btn-info" onclick="unlock(3)">Trust!</button>
+			</div>
         </div>
     </div>
 
-    <div class="row bg-color-orange-light">
+	<div class="row bg-color-orange-light postCell">
         <div class="col-sm">
-			<p id="headingArea7"></p>
-			<p id="textArea7"></p>
+            <canvas class="cellImage" id="canvas4" width="320" height="240"></canvas>
         </div>
-        <div class="col-sm">
-            <canvas id="canvas7" width="320" height="240"></canvas>
-        </div>
-    </div>
-
-    <div class="row bg-color-orange-dark">
-        <div class="col-sm">
-            <canvas id="canvas8" width="320" height="240"></canvas>
-        </div>
-        <div class="col-sm">
-			<p id="headingArea8"></p>
-			<p id="textArea8"></p>
-        </div>
-    </div>
-
-    <div class="row bg-color-orange-light">
 		<div class="col-sm">
-			<p id="headingArea9"></p>
-		    <p id="textArea9"></p>
-        </div>
-        <div class="col-sm">
-            <canvas id="canvas9" width="320" height="240"></canvas>
+			<div class="row headingArea" id="headingArea4">
+			</div>
+			<div class="row textArea" id="textArea4">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key4">
+				<button class="btn btn-info" onclick="unlock(4)">Trust!</button>
+			</div>
         </div>
     </div>
+
+	<div class="row bg-color-orange-dark postCell">
+        <div class="col-sm">
+            <canvas class="cellImage" id="canvas5" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+			<div class="row headingArea" id="headingArea5">
+			</div>
+			<div class="row textArea" id="textArea5">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key5">
+				<button class="btn btn-info" onclick="unlock(5)">Trust!</button>
+			</div>
+        </div>
+    </div>
+
+	<div class="row bg-color-orange-light postCell">
+        <div class="col-sm">
+            <canvas class="cellImage" id="canvas6" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+			<div class="row headingArea" id="headingArea6">
+			</div>
+			<div class="row textArea" id="textArea6">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key6">
+				<button class="btn btn-info" onclick="unlock(6)">Trust!</button>
+			</div>
+        </div>
+    </div>
+
+	<div class="row bg-color-orange-dark postCell">
+        <div class="col-sm">
+            <canvas class="cellImage" id="canvas7" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+			<div class="row headingArea" id="headingArea7">
+			</div>
+			<div class="row textArea" id="textArea7">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key7">
+				<button class="btn btn-info" onclick="unlock(7)">Trust!</button>
+			</div>
+        </div>
+    </div>
+
+	<div class="row bg-color-orange-light postCell">
+        <div class="col-sm">
+            <canvas class="cellImage" id="canvas8" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+			<div class="row headingArea" id="headingArea8">
+			</div>
+			<div class="row textArea" id="textArea8">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key8">
+				<button class="btn btn-info" onclick="unlock(8)">Trust!</button>
+			</div>
+        </div>
+    </div>
+
+	<div class="row bg-color-orange-dark postCell">
+        <div class="col-sm">
+            <canvas class="cellImage" id="canvas9" width="320" height="240"></canvas>
+        </div>
+		<div class="col-sm">
+			<div class="row headingArea" id="headingArea9">
+			</div>
+			<div class="row textArea" id="textArea9">
+			</div>
+			<div class="row">
+				<input type="text" class="keyText" name="key9">
+				<button class="btn btn-info" onclick="unlock(9)">Trust!</button>
+			</div>
+        </div>
+    </div>
+
 </div>
 
 <?php
@@ -212,7 +279,7 @@ while ($row = mysqli_fetch_array($query))
 	a class called welcomeText. This class is accessed and its
 	textContent attribute is modified to reflect the username of
 	the user who has logged in */
-	document.getElementById("welcomeText").textContent = "We5lcome " + username;
+	document.getElementById("welcomeText").textContent = "Welcome " + username;
 
 	/* */
 	function unlock(variable)

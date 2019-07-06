@@ -1,3 +1,5 @@
+/* ------------------------------- Colors */
+
 .bg-color-orange-dark
 {
     background-color: #ff5d00;
@@ -13,3 +15,47 @@
     background-color: #ffa055;
 }
 
+/* ------------------------------- Text boxes */
+
+.keyText
+{
+    border: 2px;
+	border-color: #98d9ea; /* light blue */
+    background-color: #ffc90e; /*light orange*/
+    border-radius: 4px;
+}
+
+/* ------------------------------- Post Cells */
+/* deals with the look of each segment that holds user posts */
+
+.postCell
+{
+	border-radius: 25px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	margin-bottom: 5px;
+}
+
+.cellImage
+{
+	border-radius: 25px;
+}
+
+.headingArea
+{
+	font-size: 180%;
+	color: white;
+}
+
+.textArea
+{
+	font-size: 120%;
+	color: white;
+	font-style: italic;
+}
+
+/*welcom text */
+.welcomText
+{
+	color: #ffc90e;
+}
