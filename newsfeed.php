@@ -239,42 +239,27 @@ while ($row = mysqli_fetch_array($query))
 
 <script>
 
-	/* These variables will be used several times in the
-	for loop. They are responsible for storing image information */
-	var canvas = null;
-	var canvasNumber = null;
-	var canvasContext = null;
-	var imageValues = null;
-	var imageData = new ImageData(320, 240);
-
 	//take the images from the php code and feed them into a javascript array
 	//for easy iteration over each image
 	var imageArray = <?php echo json_encode($image); ?>;
 
+	var nameArray = <?php echo json_encode($name); ?>;
+
+	var textArray = <?php echo json_encode($text); ?>;
+
+	/* populate post cells */
 	for(var i = 0; i < 10; i++)
 	{
-		imageValues = imageArray[i];
-
-		imageValues = imageValues.split(',');
-
-		for(var j = 0; j < imageValues.length; j++)
-		{
-			imageValues[j] = parseInt(imageValues[j]);
-		}
-
-		imageData.data.set(imageValues);
 
 		canvas = document.getElementById("canvas" + i);
 		canvasContext = canvas.getContext("2d");
-		canvasContext.putImageData(imageData, 0, 0);
+		canvasContext.putImageData(getViewableImage(i), 0, 0);
 
-		
-		var nameArray = <?php echo json_encode($name); ?>;
 		document.getElementById("headingArea" + i).textContent = nameArray[i] + " said...";
 
 		/* Whilst iterating over the images, assign the relevent text message to
 		the corresponding container */
-		var textArray = <?php echo json_encode($text); ?>;
+		
 		document.getElementById("textArea" + i).textContent = textArray[i];
 	}
 
@@ -307,6 +292,30 @@ while ($row = mysqli_fetch_array($query))
 
 
 		document.getElementById("textArea" + variable).textContent = newString;
+	}
+
+	/* extracts image data from the database and converts it into a format compatable with an html canvas */
+	function getViewableImage(imageNumber)
+	{
+		/* These variables will be used several times in the
+		for loop. They are responsible for storing image information */
+		var canvas = null;
+		var canvasContext = null;
+		var imageValues = null;
+		var imageData = new ImageData(320, 240);
+
+		imageValues = imageArray[imageNumber];
+
+		imageValues = imageValues.split(',');
+
+		for(var j = 0; j < imageValues.length; j++)
+		{
+			imageValues[j] = parseInt(imageValues[j]);
+		}
+
+		imageData.data.set(imageValues);
+
+		return imageData;
 	}
 
 </script>
