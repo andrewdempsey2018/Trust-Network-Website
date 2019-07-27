@@ -195,7 +195,7 @@
 				<button type="button" onclick="previousPage()" class="btn btn-primary btn-lg btn-block"><< Previous Page</button>
 			</div>
 			<div class="col-sm-12 col-lg-6 justify-content-center">
-				<button type="button" onclick="nextPage()" class="btn btn-primary btn-lg btn-block">Next page >></button>
+				<button type="button" onclick="nextPage()" class="btn btn-primary btn-lg btn-block">Next Page >></button>
 			</div>
 		</div>
 	</div>
@@ -209,7 +209,7 @@ that users of the website have uploaded */
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$db = "postsdb";
+$db = "trustnetworkdb";
 
 /* Connect to MariaDB and produce and error if the connection fails */
 $dbconnect=mysqli_connect($hostname, $username, $password, $db) or die("Problem connecting to database");
@@ -273,7 +273,6 @@ while ($row = mysqli_fetch_array($query))
 		/* populate post cells */
 		for(var i = firstPost; i < lastPost; i++)
 		{
-
 			canvas = document.getElementById("canvas" + cellNumber);
 			canvasContext = canvas.getContext("2d");
 			canvasContext.putImageData(getViewableImage(i), 0, 0);
@@ -295,10 +294,10 @@ while ($row = mysqli_fetch_array($query))
 		var newString = "";
 			
 		var shift = 5;
-				
-		for(var i = 0; i < textArray[variable].length; i++)
+
+		for(var i = 0; i < textArray[first + variable].length; i++)
 		{
-			newString += String.fromCharCode(textArray[variable].charCodeAt(i) - shift);
+			newString += String.fromCharCode(textArray[first + variable].charCodeAt(i) - shift);
 		}
 
 

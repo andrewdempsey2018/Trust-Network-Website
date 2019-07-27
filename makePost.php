@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$db = "postsdb";
+$db = "trustnetworkdb";
 
 /* retreive the username from the cookie generated at login */
 $name = $_COOKIE["user"];

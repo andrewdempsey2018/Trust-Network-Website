@@ -6,7 +6,7 @@ user credentials */
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$db = "users";
+$db = "trustnetworkdb";
 
 /* connect to MariaDB */
 $dbconnect = mysqli_connect($hostname, $username, $password, $db) or die("Problem connecting to database");
