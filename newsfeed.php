@@ -9,18 +9,33 @@
 
 	<!-- Comment -->
 	<link rel="stylesheet" type="text/css" href="resources/styles.css">
+
+	<!-- util.js contains functions that are used on multiple pages of the site -->
+	<script type="text/javascript" src="resources/util.js"></script>
+
 </head>
 <body>
 
 <!-- Comment -->
 <div class="container">
     <div class="row">
-		<div class="col-sm-12 col-lg-6 justify-content-center">
+		<div class="col-sm-12 col-lg-3 justify-content-center">
 			<h1 id="welcomeText" class="welcomText"></h1>
 		</div>
-		<div class="col-sm-12 col-lg-6 justify-content-center">
+		
+		<div class="col-sm-12 col-lg-3 justify-content-center">
 			<!-- temporary link to make post page -->
-			<a href="makePost.html" class="btn btn-warning btn-lg btn-block">Post</a>
+			<a href="#" class="btn btn-primary btn-sm">Logout</a>
+		</div>
+
+		<div class="col-sm-12 col-lg-3 justify-content-center">
+			<!-- temporary link to make post page -->
+			<a href="settings.html" class="btn btn-primary btn-sm">Settings</a>
+		</div>
+
+		<div class="col-sm-12 col-lg-3 justify-content-center">
+			<!-- temporary link to make post page -->
+			<a href="makePost.html" class="btn btn-warning btn-block">Post</a>
 		</div>
 	</div>
 </div>
@@ -268,6 +283,8 @@ while ($row = mysqli_fetch_array($query))
 	the user who has logged in */
 	document.getElementById("welcomeText").textContent = "Welcome " + username;
 
+	window.alert(getCookie("key"));
+
 	function populateCells(firstPost, lastPost)
 	{
 		var cellNumber = 0;
@@ -346,31 +363,6 @@ while ($row = mysqli_fetch_array($query))
 		}
 
 		populateCells(first, last);
-	}
-
-	function getCookie(cname)
-	{
-		var name = cname + "=";
-		var decodedCookie = decodeURIComponent(document.cookie);
-		var ca = decodedCookie.split(';');
-
-		for(var i = 0; i <ca.length; i++)
-		{
-			var c = ca[i];
-
-			while (c.charAt(0) == ' ')
-			{
-				c = c.substring(1);
-			}
-
-			if (c.indexOf(name) == 0)
-			{
-				return c.substring(name.length, c.length);
-			}
-		}
-
-		return "";
-
 	}
 
 </script>
