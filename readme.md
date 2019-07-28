@@ -27,6 +27,8 @@ moreilly@reorg.net 	mklp81 	Mary
 fionadoyle@gmail.com 	swac51 	Fiona
 jdoyle@gmail.com 	mnhy76 	Jimmy
 
+tom@savage.net aaaaaa1 Tom
+
 http://localhost/myprojects/trustnetwork/newsfeed.php
 http://localhost/myprojects/trustnetwork/makepost.html
 http://localhost/myprojects/trustnetwork/login.html

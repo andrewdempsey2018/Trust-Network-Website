@@ -258,8 +258,9 @@ while ($row = mysqli_fetch_array($query))
 	will return a  name/value pair and in this case it will return
 	"user=<username>" It is important that we remove the "user="
 	section of the string */
-	var username = document.cookie;
-	username = username.replace("user=", "");
+
+	var username = getCookie("user");
+	//username = username.replace("user=", "");
 
 	/* The welcome text at the top of the news feed is assigned
 	a class called welcomeText. This class is accessed and its
@@ -345,6 +346,31 @@ while ($row = mysqli_fetch_array($query))
 		}
 
 		populateCells(first, last);
+	}
+
+	function getCookie(cname)
+	{
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+
+		for(var i = 0; i <ca.length; i++)
+		{
+			var c = ca[i];
+
+			while (c.charAt(0) == ' ')
+			{
+				c = c.substring(1);
+			}
+
+			if (c.indexOf(name) == 0)
+			{
+				return c.substring(name.length, c.length);
+			}
+		}
+
+		return "";
+
 	}
 
 </script>

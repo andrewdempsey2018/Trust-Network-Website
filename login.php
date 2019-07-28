@@ -64,7 +64,7 @@ if($passwordFromLogin == $password[$indexOfUser])
 	echo "Sucsess";
 	header("Location: newsfeed.php");
 
-	/* create a session cookie that containes the username or the
+	/* create a session cookie that containes the username of the
     user who has logged in. This username will be needed for various
     operations such as posting a message on the site */
     setCookie("user", $username[$indexOfUser]);
