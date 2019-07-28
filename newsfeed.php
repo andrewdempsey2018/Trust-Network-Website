@@ -265,6 +265,8 @@ while ($row = mysqli_fetch_array($query))
 	var first = 0;
 	var last = 10;
 
+	const NUMBER_OF_CELLS = 10;
+
 	populateCells(first, last);
 
 	/* These two lines take the username from the cookie that
@@ -311,7 +313,7 @@ while ($row = mysqli_fetch_array($query))
 	{
 		var newString = "";
 			
-		var shift = 5;
+		var shift = parseInt(getCookie("key"));
 
 		for(var i = 0; i < textArray[first + variable].length; i++)
 		{
@@ -349,8 +351,8 @@ while ($row = mysqli_fetch_array($query))
 	function nextPage()
 	{
 		
-		first += 10;
-		last += 10;
+		first += NUMBER_OF_CELLS;
+		last += NUMBER_OF_CELLS;
 		populateCells(first, last);
 	}
 
@@ -358,8 +360,8 @@ while ($row = mysqli_fetch_array($query))
 	{
 		if(first > 0)
 		{
-			first -= 10;
-			last -= 10;
+			first -= NUMBER_OF_CELLS;
+			last -= NUMBER_OF_CELLS;
 		}
 
 		populateCells(first, last);
