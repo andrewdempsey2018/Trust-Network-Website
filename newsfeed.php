@@ -333,7 +333,7 @@ while ($row = mysqli_fetch_array($query))
 
 		for(var i = 0; i < imageData.data.length; i++)
 		{
-			imageData.data[i] = 195;
+			imageData.data[i] = bigArray.indexOf(imageData.data[i]);
 		}
 		
 		canvasContext.putImageData(imageData, 0, 0);
