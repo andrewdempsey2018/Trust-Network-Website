@@ -124,12 +124,20 @@
 				
 				for(var i = 0; i < textToEncrypt.length; i++)
 				{
-					newString += String.fromCharCode(textToEncrypt.charCodeAt(i) + shift);
-					
+					//the if else statements here are required to eliminate symbols from
+					//being processed, these were causing html to render the pages improperly
+					if(textToEncrypt.charAt(i) == " ")
+					{
+						newString += String.fromCharCode(textToEncrypt.charCodeAt(i));
+					}
+					else
+					{
+						newString += String.fromCharCode(textToEncrypt.charCodeAt(i) + shift);
+					}
+
+					document.getElementById("postText").value = newString;
+
 				}
-
-				document.getElementById("postText").value = newString;
-
 			}
 
 			function encodeImage(arg)

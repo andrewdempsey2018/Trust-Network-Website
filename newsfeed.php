@@ -52,9 +52,8 @@
 			</div>
 			<div class="row textArea" id="textArea0">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key0">
-				<button class="btn btn-info" onclick="unlock(0)">Trust!</button>
+			<div class="lockButton">
+				<input type="image" src="resources/images/lockButton.png"/>
 			</div>
         </div>
     </div>
@@ -317,7 +316,16 @@ while ($row = mysqli_fetch_array($query))
 
 		for(var i = 0; i < textArray[first + variable].length; i++)
 		{
-			newString += String.fromCharCode(textArray[first + variable].charCodeAt(i) - shift);
+			//the if else statements here are required to eliminate symbols from
+			//being processed, these were causing html to render the pages improperly
+			if(textArray[first + variable].charAt(i) == " ")
+			{
+				newString += String.fromCharCode(textArray[first + variable].charCodeAt(i));
+			}
+			else
+			{
+				newString += String.fromCharCode(textArray[first + variable].charCodeAt(i) - shift);
+			}
 		}
 
 
