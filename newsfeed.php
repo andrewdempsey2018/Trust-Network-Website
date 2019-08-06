@@ -52,10 +52,12 @@
 			</div>
 			<div class="row textArea" id="textArea0">
 			</div>
-			<div class="lockButton">
-				<input type="image" src="resources/images/lockButton.png"/>
+			<div class="row offset-7">
+				<input type="image" onclick="report()" src="resources/images/report.png"/>
+				<input type="image" onclick="enterKey(0)" src="resources/images/lockButton.png"/>
+				<input type="image" onclick="window.location.href = 'makePost.html';" src="resources/images/post.png"/>
 			</div>
-        </div>
+		</div>
     </div>
 
 	<div class="row bg-color-orange-dark postCell">
@@ -394,6 +396,17 @@ while ($row = mysqli_fetch_array($query))
 		}
 
 		populateCells(first, last);
+	}
+
+	function enterKey(argument)
+	{
+		var keyEntered = prompt("Please Enter the key for user " + nameArray[argument], "");
+        window.alert("User " + nameArray[argument] + " trusts you!");
+	}
+
+	function report()
+	{
+		window.confirm("Report this post?");
 	}
 
 </script>
