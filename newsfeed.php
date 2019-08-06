@@ -314,7 +314,9 @@ while ($row = mysqli_fetch_array($query))
 	{
 		var newString = "";
 			
-		var shift = parseInt(getCookie("key"));
+		var shift = parseInt(getCookie(nameArray[variable] + "_key"));
+
+		//window.alert("dd");
 
 		for(var i = 0; i < textArray[first + variable].length; i++)
 		{
@@ -402,6 +404,12 @@ while ($row = mysqli_fetch_array($query))
 	{
 		var keyEntered = prompt("Please Enter the key for user " + nameArray[argument], "");
         window.alert("User " + nameArray[argument] + " trusts you!");
+
+		document.cookie = nameArray[argument] + "_key=" + keyEntered;
+
+		//window.alert(document.cookie);
+
+		unlock(argument);
 	}
 
 	function report()
