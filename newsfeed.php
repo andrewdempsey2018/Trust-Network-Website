@@ -7,6 +7,9 @@
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+	<!-- Font Awsome CDN -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 	<!-- Comment -->
 	<link rel="stylesheet" type="text/css" href="resources/styles.css">
 
@@ -52,10 +55,10 @@
 			</div>
 			<div class="row textArea" id="textArea0">
 			</div>
-			<div class="row offset-7">
-				<input type="image" onclick="report()" src="resources/images/report.png"/>
-				<input type="image" onclick="enterKey(0)" src="resources/images/lockButton.png"/>
-				<input type="image" onclick="window.location.href = 'makePost.html';" src="resources/images/post.png"/>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(0)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(0)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
 		</div>
     </div>
@@ -69,9 +72,10 @@
 			</div>
 			<div class="row textArea" id="textArea1">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key1">
-				<button class="btn btn-info" onclick="unlock(1)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(1)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(1)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -85,9 +89,10 @@
 			</div>
 			<div class="row textArea" id="textArea2">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key2">
-				<button class="btn btn-info" onclick="unlock(2)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(2)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(2)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -101,9 +106,10 @@
 			</div>
 			<div class="row textArea" id="textArea3">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key3">
-				<button class="btn btn-info" onclick="unlock(3)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(3)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(3)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -117,9 +123,10 @@
 			</div>
 			<div class="row textArea" id="textArea4">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key4">
-				<button class="btn btn-info" onclick="unlock(4)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(4)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(4)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -133,9 +140,10 @@
 			</div>
 			<div class="row textArea" id="textArea5">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key5">
-				<button class="btn btn-info" onclick="unlock(5)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(5)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(5)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -149,9 +157,10 @@
 			</div>
 			<div class="row textArea" id="textArea6">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key6">
-				<button class="btn btn-info" onclick="unlock(6)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(6)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(6)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -165,9 +174,10 @@
 			</div>
 			<div class="row textArea" id="textArea7">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key7">
-				<button class="btn btn-info" onclick="unlock(7)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(7)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(7)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -181,9 +191,10 @@
 			</div>
 			<div class="row textArea" id="textArea8">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key8">
-				<button class="btn btn-info" onclick="unlock(8)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(8)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(8)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -197,9 +208,10 @@
 			</div>
 			<div class="row textArea" id="textArea9">
 			</div>
-			<div class="row">
-				<input type="text" class="keyText" name="key9">
-				<button class="btn btn-info" onclick="unlock(9)">Trust!</button>
+			<div class="row offset-7 cellButtons">
+				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(9)"></i>
+				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(9)"></i>
+				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>
 			</div>
         </div>
     </div>
@@ -286,7 +298,7 @@ while ($row = mysqli_fetch_array($query))
 	the user who has logged in */
 	document.getElementById("welcomeText").textContent = "Welcome " + username;
 
-	window.alert(getCookie("key"));
+	//var cellLocked = [true, true, true, true, true, true, true, true, true, true];
 
 	function populateCells(firstPost, lastPost)
 	{
@@ -304,9 +316,10 @@ while ($row = mysqli_fetch_array($query))
 			the corresponding container */
 		
 			document.getElementById("textArea" + cellNumber).textContent = textArray[i];
-		
+
 			cellNumber++;
 		}
+
 	}
 
 	/* */
@@ -315,8 +328,6 @@ while ($row = mysqli_fetch_array($query))
 		var newString = "";
 			
 		var shift = parseInt(getCookie(nameArray[variable] + "_key"));
-
-		//window.alert("dd");
 
 		for(var i = 0; i < textArray[first + variable].length; i++)
 		{
@@ -407,12 +418,10 @@ while ($row = mysqli_fetch_array($query))
 
 		document.cookie = nameArray[argument] + "_key=" + keyEntered;
 
-		//window.alert(document.cookie);
-
 		unlock(argument);
 	}
 
-	function report()
+	function report(postToReport)
 	{
 		window.confirm("Report this post?");
 	}

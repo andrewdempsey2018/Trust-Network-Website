@@ -19,6 +19,8 @@ function getCookie(cname)
 			}
 		}
 
-		return "";
+		//return "";
+		/* if the specified cookie is not found, "no_cookie" is returned */
+		return "no_cookie";
 
 	}

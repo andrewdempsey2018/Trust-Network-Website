@@ -36,6 +36,24 @@
 /* ------------------------------- Post Cells */
 /* deals with the look of each segment that holds user posts */
 
+.cellButtons
+{
+	font-size: 180%;
+	color: #ffd4c4;
+	
+}
+
+/* a 5pixels of space betweek each of the buttons */
+.cellButtons i
+{
+	padding: 5px;
+}
+
+.cellButtons i:hover
+{
+  color: red;
+}
+
 .postCell
 {
 	border-radius: 25px;
