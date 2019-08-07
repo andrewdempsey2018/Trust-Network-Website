@@ -2,10 +2,12 @@
 <head>
 <title>The Trust Network</title>
 
-	<!-- Comment -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Bootstrap includes -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<!-- Font Awsome CDN -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -14,34 +16,31 @@
 	<link rel="stylesheet" type="text/css" href="resources/styles.css">
 
 	<!-- util.js contains functions that are used on multiple pages of the site -->
-	<script type="text/javascript" src="resources/util.js"></script>
+	<script type="text/javascript" src="resources/util.js"></script> 
 
 </head>
 <body>
 
-<!-- Comment -->
+<!-- Bootsrap Navbar code -->
 <div class="container">
-    <div class="row">
-		<div class="col-sm-12 col-lg-3 justify-content-center">
-			<h1 id="welcomeText" class="welcomText"></h1>
-		</div>
-		
-		<div class="col-sm-12 col-lg-3 justify-content-center">
-			<!-- temporary link to make post page -->
-			<a href="#" class="btn btn-primary btn-sm">Logout</a>
-		</div>
-
-		<div class="col-sm-12 col-lg-3 justify-content-center">
-			<!-- temporary link to make post page -->
-			<a href="settings.html" class="btn btn-primary btn-sm">Settings</a>
-		</div>
-
-		<div class="col-sm-12 col-lg-3 justify-content-center">
-			<!-- temporary link to make post page -->
-			<a href="makePost.html" class="btn btn-warning btn-block">Post</a>
-		</div>
-	</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<i class="fas fa-lock navbarIcon"></i>
+  <a class="navbar-brand" href="newsfeed.php">The Trust Network</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="newsfeed.php">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="settings.html">Settings</a>
+      <a class="nav-item nav-link" href="login.html">Logout</a>
+    </div>
+  </div>
+  <div id="welcomeText" class="welcomText"></div>
+</nav>
 </div>
+
+
 
 <!-- Comment -->
 <div class="container">
@@ -56,6 +55,7 @@
 			<div class="row textArea" id="textArea0">
 			</div>
 			<div class="row offset-7 cellButtons">
+				<!-- buttons are reactive -->
 				<i class="fas fa-exclamation-circle" title="Report this post" onclick="report(0)"></i>
 				<i class="fas fa-unlock" title="Enter a key for this user" onclick="enterKey(0)"></i>
 				<i class="fas fa-comment-dots" title="Make a post" onclick="window.location.href = 'makePost.html';"></i>

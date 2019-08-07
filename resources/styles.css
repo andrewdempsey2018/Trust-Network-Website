@@ -80,9 +80,17 @@
 	font-style: italic;
 }
 
-/*welcom text */
+/* navbar code */
+
+.navbarIcon
+{
+    font-size: 220%;
+	color: orange;
+}
+
 .welcomText
 {
+	font-size: 220%;
 	color: #ffc90e;
 }
 
