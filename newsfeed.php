@@ -327,7 +327,7 @@ while ($row = mysqli_fetch_array($query))
 	{
 		var newString = "";
 			
-		var key = parseInt(getCookie(nameArray[variable] + "_key"));
+		var posterKey = parseInt(getCookie(nameArray[variable] + "_key"));
 
 		for(var i = 0; i < textArray[first + variable].length; i++)
 		{
@@ -339,7 +339,7 @@ while ($row = mysqli_fetch_array($query))
 			}
 			else
 			{
-				newString += String.fromCharCode(textArray[first + variable].charCodeAt(i) - key);
+				newString += String.fromCharCode(textArray[first + variable].charCodeAt(i) - posterKey);
 			}
 		}
 
@@ -354,7 +354,7 @@ while ($row = mysqli_fetch_array($query))
 
 		var encodeArray = [];
 			
-        var random = new RNG(key);
+        var random = new RNG(posterKey);
 
         var nextRandomNumber = 0;
 
@@ -368,14 +368,7 @@ while ($row = mysqli_fetch_array($query))
             }
         }
 
-		var decodeArray = [];
-	
-		for(var i = 0; i < 256; i++)
-		{
-			decodeArray.push(i);
-		}
-
-        for(var i = 0; i < imageData.data.length; i++)
+		for(var i = 0; i < imageData.data.length; i++)
         {
             imageData.data[i] = encodeArray[imageData.data[i]];
         }

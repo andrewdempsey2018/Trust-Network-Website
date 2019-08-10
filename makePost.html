@@ -75,7 +75,7 @@
 
 			/* search the document cookie to find the users key that will be used to
 			encode text and images (locally) before uploading to the database*/
-			var key = parseInt(getCookie("key"));
+			var userKey = parseInt(getCookie("key"));
 
             var canvas = document.getElementById("imageCanvas");
             var canvasContext = canvas.getContext("2d");
@@ -134,7 +134,7 @@
 					}
 					else
 					{
-						newString += String.fromCharCode(textToEncrypt.charCodeAt(i) + key);
+						newString += String.fromCharCode(textToEncrypt.charCodeAt(i) + userKey);
 					}
 
 					document.getElementById("postText").value = newString;
@@ -146,7 +146,7 @@
 			{
 				var encodeArray = [];
 			
-				var random = new RNG(key);
+				var random = new RNG(userKey);
 
 				var nextRandomNumber = 0;
 
