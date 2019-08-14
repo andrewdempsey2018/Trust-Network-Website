@@ -25,6 +25,8 @@
     border-radius: 4px;
 }
 
+/* Style the Make Post page */ 
+
 .makePostText
 {
 	border: 2px;
@@ -33,9 +35,25 @@
     border-radius: 4px;
 }
 
-/* ------------------------------- Post Cells */
-/* deals with the look of each segment that holds user posts */
+/* a buffer will help with spacing page elements */
+.bufferSmall
+{
+	height: 20px;
+	background-color: #ff5d00;
+}
 
+.bufferSmallMed
+{
+	height: 20px;
+	background-color: #ff8322;
+}
+
+.bottomSection
+{
+	height: 170px;
+}
+
+/* Style the cells that hold user messages and photos on newsfeed page */
 .cellButtons
 {
 	font-size: 180%;
@@ -43,12 +61,13 @@
 	
 }
 
-/* a 5pixels of space betweek each of the buttons */
+/* 5 pixels of space between each of the buttons */
 .cellButtons i
 {
 	padding: 5px;
 }
 
+/* Make the buttons reactive to user hover with mouse cursor */
 .cellButtons i:hover
 {
   color: red;
@@ -80,7 +99,7 @@
 	font-style: italic;
 }
 
-/* navbar code */
+/* Style for navbar at top of each page */
 
 .navbarIcon
 {
@@ -94,14 +113,27 @@
 	color: #ffc90e;
 }
 
-/*sdfsdfsdfsdfsdfsdf */
+/* Style settings screen */
+.settings
+{
+	background-color: #ff5d00; /*dark orange*/
+	font-size: 110%;
+	color: white;
+}
 
-.file-field.medium .file-path-wrapper {
-height: 3rem; }
-.file-field.medium .file-path-wrapper .file-path {
-height: 2.8rem; }
+/* a buffer will help with spacing page elements */
+.buffer
+{
+	height: 50px;
+	background-color: #ff5d00;
+}
 
-.file-field.big-2 .file-path-wrapper {
-height: 3.7rem; }
-.file-field.big-2 .file-path-wrapper .file-path {
-height: 3.5rem; }
+.border
+{
+border-width: thick;
+}
+
+.center
+{
+    text-align: center;
+}

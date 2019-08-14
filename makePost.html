@@ -4,9 +4,15 @@
         <meta charset="UTF-8">
         <title>Make a post</title>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- Bootstrap includes -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- Font Awsome CDN -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 		<link rel="stylesheet" type="text/css" href="resources/styles.css">
 
@@ -16,8 +22,29 @@
 
     <body>
 
-		<!-- header section -->
+<!-- Bootsrap Navbar code -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<i class="fas fa-lock navbarIcon"></i>
+  <a class="navbar-brand" href="newsfeed.php">The Trust Network</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="newsfeed.php">Home</a>
+      <a class="nav-item nav-link" href="settings.html">Settings</a>
+	  <a class="nav-item nav-link active" href="makePost.html">Post</a>
+      <a class="nav-item nav-link" href="login.html">Logout</a>
+    </div>
+  </div>
+  <div id="welcomeText" class="welcomText"></div>
+</nav>
+</div>
+
+<!-- header section -->
         <div class="container bg-color-orange-dark">
+			<div class="bufferSmall"></div>
             <div class="row">
                 <div class="col-sm">
 					<img src="resources/images/icon.png" alt="Trust Network Logo">
@@ -25,20 +52,20 @@
 				<div class="col-sm">
 					<h1 class="welcomText">say something...</h1>
                 </div>
-				<div class="col-sm">
-					<button class="btn btn-primary" onclick="">Settings</button>
-					<button class="btn btn-primary" onclick="">Logout</button>
-                </div>
+				
             </div>
+		
         </div>
 
 		<!-- mid section -->
 		<div class="container bg-color-orange-medium">
+		<div class="bufferSmallMed"></div>
 			<div class="row">
 				<div class="col-sm-12 col-lg-6">
 					<div class="row">
 						<canvas id="imageCanvas" src="noimage.jpg" width="320" height="240"></canvas>
 					</div>
+					<div class="bufferSmallMed"></div>
 					<div class="row">
 						<input id="fileToUpload" type="file" name="aFile">
 					    <button class="btn btn-primary" onclick="uploadImage()">Upload</button>
@@ -46,6 +73,7 @@
 
 
 				</div>
+
 				<div class="col-sm-12 col-lg-6">
 
 					<!-- the onsubmit attribute allows the text to be processed before it is submitted to the database -->
@@ -57,17 +85,12 @@
 
 				</div>
 			</div>
+			<div class="bufferSmallMed"></div>
 		</div>
 		
 		<!-- footer section -->
-		<div class="container bg-color-orange-light">
+		<div class="container bg-color-orange-light bottomSection">
 			<div class="row">
-				<div class="col-sm">
-					<p>kludge</p>
-					<p>kludge</p>
-					<p>kludge</p>
-					
-				</div>
 			</div>
 		</div>
 
@@ -79,6 +102,8 @@
 
             var canvas = document.getElementById("imageCanvas");
             var canvasContext = canvas.getContext("2d");
+
+			var imageData;
 
 			/*var base_image = new Image();
             base_image.src = "noimage.jpg";
@@ -100,7 +125,7 @@
 
 				canvasContext.drawImage(uploadedImage,0,0,320,240);
 
-				var imageData = canvasContext.getImageData(0, 0, 320, 240);
+				imageData = canvasContext.getImageData(0, 0, 320, 240);
 
 				document.getElementById("imagedata").value = imageData.data;
 
@@ -163,6 +188,7 @@
 				for(var i = 0; i < arg.length; i++)
 				{
 					arg[i] = encodeArray.indexOf(arg[i]);
+
 				}
 
 				/*for(var i = 0; i < arg.length; i += 4)

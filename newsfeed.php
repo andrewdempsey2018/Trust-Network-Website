@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>The Trust Network</title>
+<title>The Trust Network Newsfeed</title>
 
 	<!-- Bootstrap includes -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -33,6 +33,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="newsfeed.php">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="settings.html">Settings</a>
+	  <a class="nav-item nav-link" href="makePost.html">Post</a>
       <a class="nav-item nav-link" href="login.html">Logout</a>
     </div>
   </div>
@@ -367,6 +368,7 @@ while ($row = mysqli_fetch_array($query))
                 encodeArray.push(nextRandomNumber);
             }
         }
+
 
 		for(var i = 0; i < imageData.data.length; i++)
         {
