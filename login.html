@@ -24,19 +24,18 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<i class="fas fa-lock navbarIcon"></i>
-  <a class="navbar-brand" href="newsfeed.php">The Trust Network</a>
+  <a class="navbar-brand" href="#">The Trust Network</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link disabled" href="newsfeed.php">Home</a>
-      <a class="nav-item nav-link disabled" href="settings.html">Settings</a>
-	  <a class="nav-item nav-link disabled" href="makePost.html">Post</a>
+      <a class="nav-item nav-link disabled" href="#">Home</a>
+      <a class="nav-item nav-link disabled" href="#">Settings</a>
+	  <a class="nav-item nav-link disabled" href="#">Post</a>
       <a class="nav-item nav-link active" href="login.html">Logout</a>
     </div>
   </div>
-  <div id="welcomeText" class="welcomText"></div>
 </nav>
 </div>
 
@@ -44,13 +43,23 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col center">
+				<div class="col">
+				</div>
+				<div class="col">
 					<p>Please enter your username and password</p>
 					<form action="login.php" method="POST">
 						First name: <input type="text" name="email"><br>
-						Password: <input type="password" name="password"><br>
+						Password : <input type="password" name="password"><br>
 					<input type="submit" value="Login"></form>
+					<input type="checkbox" class="form-check-input" id="cookieConsent">
+					<label class="form-check-label" for="cookieConsent">I consent to the use of cookies</label>
 				</div>
+				<div class="col">
+					
+				</div>
+			</div>
+			<div class="row">
+			
 			</div>
 		</div>
 

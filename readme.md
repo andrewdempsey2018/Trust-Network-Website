@@ -1,28 +1,26 @@
-https://github.com/andrewdempsey2018/Trust-Network-Website.git
+# The Trust Network #
 
-Database name: postsdb
-Table name: poststable
-Columns
-	id - int (auto increment)
-	name - text
-	text - text
-	image - longtext
+### *A social network that users can trust* ###
 
-Database name: users
-Table name: userlist
-	email - text
-	password - text
-	username - text
+## What is The Trust Network?
 
-*** delete this ***
+adsf
 
-tom@savage.net 	aaaaaa1 	Tom
-barry@savage.net 	aaaaaa1 	Barry
-mary@savage.net 	aaaaaa1 	Mary
-stan@savage.net 	aaaaaa1 	Stan
+![sss](resources/readme_files/img1.png)
 
-http://localhost/myprojects/trustnetwork/newsfeed.php
-http://localhost/myprojects/trustnetwork/makepost.html
-http://localhost/myprojects/trustnetwork/login.html
+### Features
 
-*** delete this ***
+- Encrypt and decrypt messages and images on local machines - at no time will the server be able to read or see messages/images
+- Stylish layout that responds to desktop and mobile platforms
+- No targeted advertising
+
+## Deployment
+
+### Server requirements
+
+Database structure
+
+ss
+
+
+
