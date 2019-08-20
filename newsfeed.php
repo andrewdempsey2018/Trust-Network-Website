@@ -18,6 +18,9 @@
 	<!-- util.js contains functions that are used on multiple pages of the site -->
 	<script type="text/javascript" src="resources/util.js"></script> 
 
+	<!-- import the Vigenere cipher script -->
+    <script type="text/javascript" src="resources/vigenere.js"></script>
+
 </head>
 <body>
 
@@ -326,26 +329,9 @@ while ($row = mysqli_fetch_array($query))
 	/* */
 	function unlock(variable)
 	{
-		var newString = "";
-			
-		var posterKey = parseInt(getCookie(nameArray[variable] + "_key"));
+		var posterKey = getCookie(nameArray[variable] + "_key");
 
-		for(var i = 0; i < textArray[first + variable].length; i++)
-		{
-			//the if else statements here are required to eliminate symbols from
-			//being processed, these were causing html to render the pages improperly
-			if(textArray[first + variable].charAt(i) == " ")
-			{
-				newString += String.fromCharCode(textArray[first + variable].charCodeAt(i));
-			}
-			else
-			{
-				newString += String.fromCharCode(textArray[first + variable].charCodeAt(i) - posterKey);
-			}
-		}
-
-
-		document.getElementById("textArea" + variable).textContent = newString;
+		document.getElementById("textArea" + variable).textContent = vegenereDecode(textArray[first + variable], posterKey);
 
         /* Unlock the images */
 
@@ -355,7 +341,10 @@ while ($row = mysqli_fetch_array($query))
 
 		var encodeArray = [];
 			
-        var random = new RNG(posterKey);
+        /* this code needs a bit of work >> */
+		/* temp code: we take the unicode value of the first letter of the key and use it to encode the image */
+        var random = new RNG(posterKey.charCodeAt(0));
+		/* this code needs a bit of work ^^ */
 
         var nextRandomNumber = 0;
 

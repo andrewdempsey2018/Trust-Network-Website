@@ -6,7 +6,9 @@
 
 adsf
 
-![sss](resources/readme_files/img1.png)
+![image1 description](resources/readme_files/img1.png)
+
+***Image 1.** A screenshot of...*
 
 ### Features
 
@@ -21,6 +23,10 @@ adsf
 Database structure
 
 ss
+
+![Database structure](resources/readme_files/dbstructure.png)
+
+
 
 
 

@@ -18,6 +18,9 @@
 
 		<!-- util.js contains functions that are used on multiple pages of the site -->
 		<script type="text/javascript" src="resources/util.js"></script>
+
+		<!-- import the Vigenere cipher script -->
+		<script type="text/javascript" src="resources/vigenere.js"></script>
     </head>
 
     <body>
@@ -97,7 +100,8 @@
 
 			/* search the document cookie to find the users key that will be used to
 			encode text and images (locally) before uploading to the database*/
-			var userKey = parseInt(getCookie("key"));
+			//var userKey = parseInt(getCookie("key"));
+			var userKey = getCookie("key");
 
             var canvas = document.getElementById("imageCanvas");
             var canvasContext = canvas.getContext("2d");
@@ -141,36 +145,23 @@
 				
 			}
 
-			/* this function iterates over the text in the text field and eciphers
-			it according to the users key*/
+			/* use the vigenere script to encode the text*/
 			function encodeText()
 			{
 				var textToEncrypt = document.getElementById("postText").value;
-				var newString = "";
+				var newString = vegenereEncode(textToEncrypt, userKey)
 			
-				for(var i = 0; i < textToEncrypt.length; i++)
-				{
-					//the if else statements here are required to eliminate symbols from
-					//being processed, these were causing html to render the pages improperly
-					if(textToEncrypt.charAt(i) == " ")
-					{
-						newString += String.fromCharCode(textToEncrypt.charCodeAt(i));
-					}
-					else
-					{
-						newString += String.fromCharCode(textToEncrypt.charCodeAt(i) + userKey);
-					}
-
-					document.getElementById("postText").value = newString;
-
-				}
+				document.getElementById("postText").value = newString;
 			}
 
 			function encodeImage(arg)
 			{
 				var encodeArray = [];
 			
-				var random = new RNG(userKey);
+				/* this code needs a bit of work >> */
+				/* temp code: we take the unicode value of the first letter of the key and use it to encode the image */
+				var random = new RNG(userKey.charCodeAt(0));
+				/* this code needs a bit of work ^^*/
 
 				var nextRandomNumber = 0;
 
