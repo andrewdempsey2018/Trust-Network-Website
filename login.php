@@ -62,7 +62,7 @@ if($passwordFromLogin == $password[$indexOfUser])
 {
 	/* on successful login, rediredt user to main newsfeed */
 	echo "Sucsess";
-	header("Location: newsfeed.php");
+	header("Location: cookie.html");
 
 	/* create a session cookie that containes the username of the
     user who has logged in. This username will be needed for various

@@ -341,10 +341,9 @@ while ($row = mysqli_fetch_array($query))
 
 		var encodeArray = [];
 			
-        /* this code needs a bit of work >> */
-		/* temp code: we take the unicode value of the first letter of the key and use it to encode the image */
-        var random = new RNG(posterKey.charCodeAt(0));
-		/* this code needs a bit of work ^^ */
+        /* !! */
+		var random = new RNG(1);
+		//var random = new RNG(posterKey.charCodeAt(0));
 
         var nextRandomNumber = 0;
 
