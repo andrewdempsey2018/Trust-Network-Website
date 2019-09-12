@@ -33,7 +33,7 @@ Here we see a typical view of the newsfeed page, the main content area of the we
 
 ![image1 description](resources/readme_files/typview.png)
 
-***Image 1.**Newsfeed page*
+*Image 1. Newsfeed page*
 
 ## Deployment
 
@@ -43,37 +43,49 @@ In order to vanilla deploy the website on your server, you will need a database 
 
 ![Database structure](resources/readme_files/dbview.png)
 
-***Image 2.**Required structure of database*
+*Image 2. Required structure of database*
 
 ## Tour
 
 ![Database structure](resources/readme_files/cookie.png)
 
-**Image 3.**Users can either accept or decline cookies. Both choices will result in sucsessful login. Using the site without cookies requires some setting to be resubmitted for each session
+*Image 3. Users can either accept or decline cookies. Both choices will result in sucsessful login. Using the site without cookies requires some setting to be resubmitted for each session*
+
+----------
 
 ![Database structure](resources/readme_files/lock.png)
 
-***Image 4.**Here we see a user has logged in but have not entered any personal keys. The user cannot see any messages that other posters have uploaded.*
+*Image 4. Here we see a user has logged in but have not entered any personal keys. The user cannot see any messages that other posters have uploaded.*
+
+----------
 
 ![Database structure](resources/readme_files/key.png)
 
-***Image 5.**The user is now about to enter a personal key for another user named "Alex". Should the key be entered correctly, the user will be able to see all posts by user Alex. This key will be saved as a cookie meaning the user will not to re-enter it everytime they login.*
+*Image 5. The user is now about to enter a personal key for another user named "Alex". Should the key be entered correctly, the user will be able to see all posts by user Alex. This key will be saved as a cookie meaning the user will not to re-enter it everytime they login.*
+
+----------
 
 ![Database structure](resources/readme_files/trust.png)
 
-***Image 6.**A message to indicate successful entry of the personal key*
+*Image 6. A message to indicate successful entry of the personal key*
+
+----------
 
 ![Database structure](resources/readme_files/post.png)
 
-***Image 7.**Users can enter messages here. They will be encrypted automatically before they are submitted to the database.*
+*Image 7. Users can enter messages here. They will be encrypted automatically before they are submitted to the database.*
+
+----------
 
 ![Database structure](resources/readme_files/report.png)
 
-***Image 8.**Offensive posts may be reported to the website administrators via the report post button, seen on the newsfeed page*
+*Image 8. Offensive posts may be reported to the website administrators via the report post button, seen on the newsfeed page*
+
+----------
 
 ![Database structure](resources/readme_files/settings.png)
 
-***Image 9.**Chage password and personal key here*
+*Image 9. Chage password and personal key here*
 
 ## Testing
 
